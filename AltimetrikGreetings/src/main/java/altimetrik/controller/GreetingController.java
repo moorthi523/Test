@@ -43,7 +43,7 @@ public class GreetingController {
 	@RequestMapping(method = RequestMethod.GET, path = "/hi")
 	public String sayHi() {
 
-		return "new application";
+		return "new application hello";
 	}
 
 }
