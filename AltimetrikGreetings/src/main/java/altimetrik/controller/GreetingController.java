@@ -30,13 +30,20 @@ public class GreetingController {
 		List<String> mobileNums = Stream.of(mobiles.split(",")).collect(Collectors.toList());
 		Message msg = null;
 		for (String mob : mobileNums) {
-			msg  = new Message();
+			msg = new Message();
 			msg.setMobile(mob);
 			msg.setMsg("Happy new Year");
 			msg.setStatus("Success");
 			msgRepo.save(msg);
 			greetingProducer.sendMessage("Happy new Year");
-			
+
 		}
 	}
+
+	@RequestMapping(method = RequestMethod.GET, path = "/hi")
+	public String sayHi() {
+
+		return "new application";
+	}
+
 }
